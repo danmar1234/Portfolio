@@ -130,3 +130,38 @@ li:hover .nav-link {
     margin: 0.5rem 0rem 0rem 1rem;
 }
 
+i {
+    font-size: 50px;
+    margin: 0.8rem;
+}
+#js {
+    font-size: 45px;
+}
+#cards {
+    display: flex;
+    flex-direction: row;
+}
+.card {
+    width: 21rem;
+    height: 19rem;
+    position: relative;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #a31844;
+    border-radius: 1rem;
+    transition: .3s;
+}
+.card:hover {
+    box-shadow: 0 0 18px #630e29;
+}
+.github {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+.langs {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2.4rem;
+}
