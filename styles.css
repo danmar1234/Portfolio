@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    background-color: #160d20;
+    font-family: 'Roboto', sans-serif;
+    color: #bbbbbb;
+}
+h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #D6C5F0;
+}
+p {
+    font-size: 1.3em;
+}
+.container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+.about {
+    height: 500px;
+    width: 60%;
+}
+.previousWork {
+    height: 500px;
+    width: 60%;
+}
+.projects {
+    height: 500px;
+    width: 60%;
+}
+.contact {
+    height: 500px;
+    width: 60%;
+}
+
+.navbar {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding-top: 2%;
+}
+.list {
+    padding-left: 50%;
+    width: 50%;
+
+}
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+  
+li {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: transparent;
+}
+.nav-link {
+    display: block;
+    color: #D6C5F0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.27s;
+}
+
+li:hover .nav-link {
+    color: #a31844;
+}
+
+
+
+
+
+.btn {
+    padding: 12px 0px 0px 0px;
+    text-align: center;
+}
+
+.btn-primary {
+
+    width: 120px;
+    height: 35px;
+    margin:15px;
+    border: 1px solid #a31844;
+    border-radius: 1.25rem;
+    
+
+    background-color: transparent;
+    color: #dadada;
+    transition: 0.4s;
+}
+.btn-primary:hover {
+    background-color: #a3184449;
+
+  }
+.btn-secondary {
+
+    width: 120px;
+    height: 35px;
+    margin:15px;
+    border: 1px solid #a31844;
+    border-radius: 1.25rem;
+    
+    background-color: transparent;
+    color: #dadada;
+    transition: 0.4s;
+}
+.btn-secondary:hover {
+    background-color: #a3184449;
+}
+
+#work {
+    color:#dadada; 
+    margin: 0.5rem 0rem 0.7rem 0.4rem;
+}
+#time {
+    color:#bbbbbb;
+    font-size: 1.1em;
+    margin: 0.5rem 0rem 0rem 1rem;
+}
+#place {
+    color:#bbbbbb;
+    font-size: 1.1em;
+    margin: 0.5rem 0rem 0rem 1rem;
+}
+
