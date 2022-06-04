@@ -20,29 +20,38 @@ p {
     height: 500px;
     width: 60%;
 }
+#aboutP{ 
+    min-width: 13rem;
+}
 .previousWork {
     height: 500px;
     width: 60%;
 }
 .projects {
-    height: 500px;
+    height: auto;
     width: 60%;
 }
 .contact {
+    margin-top: 5rem;
     height: 500px;
     width: 60%;
 }
 
 .navbar {
-    display: flex;
+
     height: 100px;
     width: 100%;
-    flex-wrap: nowrap;
     padding-top: 2%;
+    
 }
 .list {
-    padding-left: 50%;
+
+    padding-top: 1.5rem;
     width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 500px;
 
 }
 .nav-list {
@@ -116,15 +125,18 @@ li:hover .nav-link {
 }
 
 #work {
+    min-width: 13rem;
     color:#dadada; 
     margin: 0.5rem 0rem 0.7rem 0.4rem;
 }
 #time {
+    min-width: 13rem;
     color:#bbbbbb;
     font-size: 1.1em;
     margin: 0.5rem 0rem 0rem 1rem;
 }
 #place {
+    min-width: 13rem;
     color:#bbbbbb;
     font-size: 1.1em;
     margin: 0.5rem 0rem 0rem 1rem;
@@ -140,8 +152,10 @@ i {
 #cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .card {
+    min-width: 15rem;
     width: 21rem;
     height: 19rem;
     position: relative;
