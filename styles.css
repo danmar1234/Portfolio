@@ -11,38 +11,78 @@ h1 {
 p {
     font-size: 1.3em;
 }
-.container {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
+.curve {
+    aspect-ratio: 900/300;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+    .s1 {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgOTAwIDMwMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMxNjBkMjAiPjwvcmVjdD48cGF0aCBkPSJNMCAyNjBMMzcuNSAyNTMuM0M3NSAyNDYuNyAxNTAgMjMzLjMgMjI1IDIyOC4zQzMwMCAyMjMuMyAzNzUgMjI2LjcgNDUwIDIzNi44QzUyNSAyNDcgNjAwIDI2NCA2NzUgMjcyLjVDNzUwIDI4MSA4MjUgMjgxIDg2Mi41IDI4MUw5MDAgMjgxTDkwMCAzMDFMODYyLjUgMzAxQzgyNSAzMDEgNzUwIDMwMSA2NzUgMzAxQzYwMCAzMDEgNTI1IDMwMSA0NTAgMzAxQzM3NSAzMDEgMzAwIDMwMSAyMjUgMzAxQzE1MCAzMDEgNzUgMzAxIDM3LjUgMzAxTDAgMzAxWiIgZmlsbD0iIzZhNDM5ZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIj48L3BhdGg+PC9zdmc+")
+    }
+    .s2 {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgOTAwIDMwMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiM2YTQzOWQiPjwvcmVjdD48cGF0aCBkPSJNMCAxODFMMzcuNSAxODguMkM3NSAxOTUuMyAxNTAgMjA5LjcgMjI1IDIwM0MzMDAgMTk2LjMgMzc1IDE2OC43IDQ1MCAxNTMuOEM1MjUgMTM5IDYwMCAxMzcgNjc1IDE0Mi44Qzc1MCAxNDguNyA4MjUgMTYyLjMgODYyLjUgMTY5LjJMOTAwIDE3Nkw5MDAgMzAxTDg2Mi41IDMwMUM4MjUgMzAxIDc1MCAzMDEgNjc1IDMwMUM2MDAgMzAxIDUyNSAzMDEgNDUwIDMwMUMzNzUgMzAxIDMwMCAzMDEgMjI1IDMwMUMxNTAgMzAxIDc1IDMwMSAzNy41IDMwMUwwIDMwMVoiIGZpbGw9IiMxNjBkMjAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciI+PC9wYXRoPjwvc3ZnPg==")
+    }
+
+
 .about {
-    height: 500px;
-    width: 60%;
+    margin-top: 15rem;
+    height: auto;
+    padding: 60px 15% 60px 15%;
+
 }
+h5 {
+    color: #a31844;
+    font-size: medium;
+}
+
 #aboutP{ 
     min-width: 13rem;
 }
+#home {
+    overflow: hidden;
+    display: flex;
+    padding: 150px 0 60px 15%;
+    flex-direction: row;
+}
+#homepageillustr {
+    margin-left: 15%;
+
+}
+#homepageillustrImg {
+    height: 26vw;
+
+}
 .previousWork {
-    height: 500px;
-    width: 60%;
+    background-color: #6a439d;
+    height: 600px;
+    padding: 100px 15% 60px 15%;
 }
 .projects {
     height: auto;
-    width: 60%;
+    padding: 0 15% 60px 15%;
 }
 .contact {
+    background-color: #160d20;
     margin-top: 5rem;
     height: 500px;
-    width: 60%;
+    padding: 60px 15% 60px 15%;
 }
 
 .navbar {
-
     height: 100px;
     width: 100%;
-    padding-top: 2%;
-    
+    padding-top: 1rem;
+}
+.logo {
+    float: left;
+    margin-left: 2.5em;
+    margin-top: 1.9rem;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #a31844;
+    cursor: default;
 }
 .list {
 
@@ -106,8 +146,7 @@ li:hover .nav-link {
 }
 .btn-primary:hover {
     background-color: #a3184449;
-
-  }
+}
 .btn-secondary {
 
     width: 120px;
@@ -127,7 +166,7 @@ li:hover .nav-link {
 #work {
     min-width: 13rem;
     color:#dadada; 
-    margin: 0.5rem 0rem 0.7rem 0.4rem;
+    margin: 2.8rem 0rem 0.7rem 0.4rem;
 }
 #time {
     min-width: 13rem;
@@ -141,7 +180,54 @@ li:hover .nav-link {
     font-size: 1.1em;
     margin: 0.5rem 0rem 0rem 1rem;
 }
+#skills {
+    margin-top: 11rem;
+    min-width: 247px;
+}
+#skillsList{
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    float:left;
+    padding: 0;
+    margin: 0;
+}
+#skillsList2{
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    float:left;
+    padding-left: 6rem;
+    margin: 0;
 
+}
+.skillItem{
+    color:#bbbbbb;
+    font-size: 1.8em;
+    text-align:left;
+    
+
+}
+@media only screen and (max-width: 561px) {
+    #skills {
+        min-width: 247px;
+    }
+    #skillsList{
+        padding: 0;
+        margin: 0;
+    }
+    #skillsList2{
+        padding-left: 0;
+        margin: 0;
+    
+    }
+    .skillItem{
+        font-size: 1em;
+    }
+    .logo {
+        margin-left: 1em;
+    }
+  }
 i {
     font-size: 50px;
     margin: 0.8rem;
