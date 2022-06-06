@@ -27,7 +27,7 @@ p {
 
 
 .about {
-    margin-top: 15rem;
+    margin-top: 19rem;
     height: auto;
     padding: 60px 15% 60px 15%;
 
@@ -36,9 +36,24 @@ h5 {
     color: #a31844;
     font-size: medium;
 }
+#hey {
+    margin-bottom: 15px;
+}
+.name {
+    margin: 0;
 
+    font-size: 70px !important; 
+}
 #aboutP{ 
     min-width: 13rem;
+}
+.homepage {
+    min-height: 100vh;
+    background-image: url(assets/backgroundwave.svg);
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: move_curves 110s ease infinite;
+    background-position: 40%;
 }
 #home {
     overflow: hidden;
@@ -47,12 +62,67 @@ h5 {
     flex-direction: row;
 }
 #homepageillustr {
+    position: absolute;
+    right: 3vw;
     margin-left: 15%;
 
 }
 #homepageillustrImg {
     height: 26vw;
 
+}
+@media only screen and (max-width: 1195px) {
+    .name {
+        font-size: 40px !important; 
+    }
+}
+@media only screen and (max-width: 770px) {
+    #homepageillustr {
+        display: none;
+    }
+    .list {
+        margin: 6rem 0 0 0 !important;
+        padding: 0 !important;
+        background-color: #160d20;
+        width: 100% !important;
+        min-width: 50px !important;
+    }
+    .nav-link {
+        opacity: 0;
+    }
+    .nav-link.fadeIn {
+        opacity: 1;
+        transition: all ease-in-out .5s; 
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: all ease-in-out 0.7s;
+        height: 60vh;
+    }
+    .nav-list.active {
+        text-align: center;
+        max-height: 60vh;
+        max-width: 100% !important;
+    }
+}
+@media only screen and (min-width: 770px) {
+    .menuLogo {
+        display: none;
+    }
+}
+@keyframes move_curves {
+    0% {
+        background-position: 15% 50%;
+    }
+    50% {
+        background-position: 100% 75%;
+    }
+    100% {
+        background-position: 15% 50%;
+    }
 }
 .previousWork {
     background-color: #6a439d;
@@ -84,6 +154,12 @@ h5 {
     font-size: 1.5em;
     color: #a31844;
     cursor: default;
+}
+.menuLogo {
+    float: right;
+    margin-right: 4.2em;
+    margin-top: 1.9rem;
+    cursor: pointer;
 }
 .list {
 
@@ -174,6 +250,7 @@ li:hover .nav-link {
     float:left;
     padding: 0;
     margin: 0;
+    margin-top: 1.4rem;
 }
 #skillsList2{
     display: flex;
@@ -182,6 +259,7 @@ li:hover .nav-link {
     float:left;
     padding-left: 6rem;
     margin: 0;
+    margin-top: 1.4rem;
 
 }
 .skillItem{
@@ -307,5 +385,8 @@ form {
     .btn-primary {
         width: 100%;
         min-width: 100px;     
+    }
+    .menuLogo {
+        margin-right: 1.7em;
     }
 }
