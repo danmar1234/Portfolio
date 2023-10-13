@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Portfolio - Danyal Maherzadeh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   </head>
   <body>
+    <svg class="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path class="overlay__path" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z"></path>
+    </svg>
     <main>
         <div class="homepage">
             <div class="navbar">
@@ -31,7 +38,7 @@
                     <div>
                         <h5 id="hey">Hey, my name is</h5>
                         <h1 class="name">Danyal</h1>
-                        <h1 class="name">Maherzadeh</h1>
+                        <h1 class="lastName">Maherzadeh</h1>
                     </div>
 
                     <div id="homepageillustr"><img id="homepageillustrImg" src="assets/homepageillustr.svg" alt="homepage illustration"/></div>
@@ -40,39 +47,39 @@
             <div class="about" id="about">
                 <h1>About Me</h1>
                 <p id="aboutP">            
-                    I'm an undergraduate student studying Computer Science at Portland State University 
-                    and I'll be graduating next year.  
-                    I wish to work as a web developer. I've always been passionate about design and aesthetics, 
-                    but I love coding and solving problems just as much.
+                    I studied Computer Science at Portland State University, and I'm passionate about both software and web development. 
+                    Bringing ideas to life with code is what drew me to this profession, and I have always really enjoyed the problem solving aspect of it. 
+                    I'm also a big front-end enthusiast. 
                 </p>
+                <canvas id="webglCanvas"></canvas>
             </div>
             <div class="curve s1"></div>
             <div class="previousWork" id="previousWork">
                 <h1>Experience</h1>
                 <p id="work">Volunteer at the Computer Action Team</p>
-                <p id="time">2021-Present</p>
+                <p id="time">2021-2023</p>
                 <p id="place">Maseeh College of Engineering and Computer Science</p>
 
                 <div id="skills">
                     <h1>Skills</h1>
                     <ul id="skillsList">
+                        <li class="skillItem">JavaScript</li>
+                        <li class="skillItem">Node.js</li>
+                        <li class="skillItem">React</li>
+                        <li class="skillItem">HTML & CSS</li>
+                    </ul>
+                    <ul id="skillsList2">
+                        <li class="skillItem">Python</li>
                         <li class="skillItem">C++</li>
                         <li class="skillItem">C</li>
                         <li class="skillItem">C#</li>
-                        <li class="skillItem">Python</li>
-                    </ul>
-                    <ul id="skillsList2">
-                        <li class="skillItem">JavaScript</li>
-                        <li class="skillItem">Node.js</li>
-                        <li class="skillItem">HTML</li>
-                        <li class="skillItem">CSS</li>
                     </ul>
                 </div>
-
             </div>
             <div class="curve s2"></div>
             <div class="projects" id="projects">
                 <h1>Projects</h1>
+                <div id="projectAnim"><canvas id="canvas3d"></canvas></div>
                 <div id="cards">
                     <div class="card"> 
                         <h3>Slophi</h3> Audio Visualization Web App that also allows for changing the playback 
@@ -88,6 +95,8 @@
                             width="34" height="34" viewBox="0 0 24 24"><path fill="#bbbbbb" 
                             d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 
                             5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/></svg></a>
+                            <a href="https://slophi.fly.dev/"><svg fill="#bbbbbb" width="34px" height="34px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#bbbbbb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M960 704c-35.346 0-64 28.654-64 64v64c0 35.346-28.654 64-64 64H192c-35.346 0-64-28.654-64-64V192c0-35.346 28.654-64 64-64h64c35.346 0 64-28.654 64-64S291.346 0 256 0h-64C85.961 0 0 85.961 0 192v640c0 106.039 85.961 192 192 192h640c106.039 0 192-85.961 192-192v-64c0-35.346-28.654-64-64-64z"></path><path d="M1023.876 51.52c0-1.92 0-3.84-1.6-5.44a63.957 63.957 0 00-1.92-6.4 63.973 63.973 0 00-3.2-6.4s0-3.2-2.56-4.8a63.989 63.989 0 00-17.6-17.6L991.876 8l-6.08-3.2-6.72-1.92h-5.44A64.028 64.028 0 00959.876 0h-384c-35.346 0-64 28.654-64 64s28.654 64 64 64h229.44l-370.56 370.88c-25.007 25.007-25.007 65.553 0 90.56s65.553 25.007 90.56 0l370.56-370.88V448c0 35.346 28.654 64 64 64s64-28.654 64-64V64c.407-4.15.407-8.33 0-12.48z"></path></g></svg></a>
+
                         </div>
                     </div>
                     <div class="card">
@@ -102,33 +111,54 @@
                             5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/></svg></a>
                         </div>
                     </div>
+                    <div class="card">
+                        <h3>Carbnb</h3> A peer-to-peer network that facilitates the sharing of electric vehicle charging outlets. 
+                        Worked within a team to develop the application for a sponsor. 
+                        Used React to develop user interface for the front-end web client.
+                         <div class="langs">
+                            <i class="devicon-react-original-wordmark"></i>
+                            <i class="devicon-css3-plain-wordmark"></i>
+                            <i class="devicon-html5-plain-wordmark"></i>
+                            <i class="devicon-javascript-plain" id="js"></i>
+                         </div>
+                        <div class="github">
+                            <a href="https://carbnb-proj.uw.r.appspot.com/"><svg fill="#bbbbbb" width="34px" height="34px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#bbbbbb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M960 704c-35.346 0-64 28.654-64 64v64c0 35.346-28.654 64-64 64H192c-35.346 0-64-28.654-64-64V192c0-35.346 28.654-64 64-64h64c35.346 0 64-28.654 64-64S291.346 0 256 0h-64C85.961 0 0 85.961 0 192v640c0 106.039 85.961 192 192 192h640c106.039 0 192-85.961 192-192v-64c0-35.346-28.654-64-64-64z"></path><path d="M1023.876 51.52c0-1.92 0-3.84-1.6-5.44a63.957 63.957 0 00-1.92-6.4 63.973 63.973 0 00-3.2-6.4s0-3.2-2.56-4.8a63.989 63.989 0 00-17.6-17.6L991.876 8l-6.08-3.2-6.72-1.92h-5.44A64.028 64.028 0 00959.876 0h-384c-35.346 0-64 28.654-64 64s28.654 64 64 64h229.44l-370.56 370.88c-25.007 25.007-25.007 65.553 0 90.56s65.553 25.007 90.56 0l370.56-370.88V448c0 35.346 28.654 64 64 64s64-28.654 64-64V64c.407-4.15.407-8.33 0-12.48z"></path></g></svg></a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="contact" id="contact">
-                <h1>Contact</h1>
-                <div class="form">
-                    <form>
-                        <ul class="formList">
-                        <li class="formItem">
-                        <label for="name">Name</label>
-                        <input class="main-input" type="text" id="name" name="name">
-                        </li>
-                        <li class="formItem">
-                        <label for="Email">Email</label>
-                        <input class="main-input" type="email" id="Email" name="email">
-                        </li>
-                        <li class="formItem">
-                        <label for="message">Message</label>
-                        <textarea class="main-input" id="user_message" name="message"></textarea>
-                        </li>
-                        </ul>
+                <div class="form-section">
+                    <h1>Contact</h1>
+                    <div class="form">
+                        <form action="https://formsubmit.co/98ff19052d844dc8adef9a42b81ef2dd" method="POST">
+                            <ul class="formList">
+                            <li class="formItem">
+                            <label for="name">Name</label>
+                            <input class="main-input" type="text" id="name" name="name" required>
+                            </li>
+                            <li class="formItem">
+                            <label for="Email">Email</label>
+                            <input class="main-input" type="email" id="Email" name="email" required>
+                            </li>
+                            <li class="formItem">
+                            <label for="message">Message</label>
+                            <textarea class="main-input" id="user_message" name="message"></textarea>
+                            </li>
+                            </ul>
 
-                        <input type="submit" value="Submit" class="btn-primary"/>
-                   </form>
+                            <input type="submit" value="Submit" class="btn-primary"/>
+                    </form>
+                    </div>
                 </div>
-
+                <div class="illustration-section">
+                    <div class="illust-bgcolor"></div>
+                    <div class="contactTitle">GET IN TOUCH</div>
+                    <img id="contactBackground" src="assets\svg2.svg" alt="contact background">
+                </div>
             </div>
+
     </main>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

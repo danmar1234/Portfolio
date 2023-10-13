@@ -11,6 +11,15 @@ h1 {
 p {
     font-size: 1.3em;
 }
+.overlay {
+	position: absolute;
+    left: 0;
+    top: 0;
+	z-index: 1000;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+}
 .curve {
     aspect-ratio: 900/300;
     width: 100%;
@@ -19,10 +28,10 @@ p {
     background-repeat: no-repeat;
 }
     .s1 {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgOTAwIDMwMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiMxNjBkMjAiPjwvcmVjdD48cGF0aCBkPSJNMCAyNjBMMzcuNSAyNTMuM0M3NSAyNDYuNyAxNTAgMjMzLjMgMjI1IDIyOC4zQzMwMCAyMjMuMyAzNzUgMjI2LjcgNDUwIDIzNi44QzUyNSAyNDcgNjAwIDI2NCA2NzUgMjcyLjVDNzUwIDI4MSA4MjUgMjgxIDg2Mi41IDI4MUw5MDAgMjgxTDkwMCAzMDFMODYyLjUgMzAxQzgyNSAzMDEgNzUwIDMwMSA2NzUgMzAxQzYwMCAzMDEgNTI1IDMwMSA0NTAgMzAxQzM3NSAzMDEgMzAwIDMwMSAyMjUgMzAxQzE1MCAzMDEgNzUgMzAxIDM3LjUgMzAxTDAgMzAxWiIgZmlsbD0iIzZhNDM5ZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIj48L3BhdGg+PC9zdmc+")
+        background-image: url(assets/curve1.svg)
     }
     .s2 {
-        background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0idmlzdWFsIiB2aWV3Qm94PSIwIDAgOTAwIDMwMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiM2YTQzOWQiPjwvcmVjdD48cGF0aCBkPSJNMCAxODFMMzcuNSAxODguMkM3NSAxOTUuMyAxNTAgMjA5LjcgMjI1IDIwM0MzMDAgMTk2LjMgMzc1IDE2OC43IDQ1MCAxNTMuOEM1MjUgMTM5IDYwMCAxMzcgNjc1IDE0Mi44Qzc1MCAxNDguNyA4MjUgMTYyLjMgODYyLjUgMTY5LjJMOTAwIDE3Nkw5MDAgMzAxTDg2Mi41IDMwMUM4MjUgMzAxIDc1MCAzMDEgNjc1IDMwMUM2MDAgMzAxIDUyNSAzMDEgNDUwIDMwMUMzNzUgMzAxIDMwMCAzMDEgMjI1IDMwMUMxNTAgMzAxIDc1IDMwMSAzNy41IDMwMUwwIDMwMVoiIGZpbGw9IiMxNjBkMjAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciI+PC9wYXRoPjwvc3ZnPg==")
+        background-image: url(assets/curve2.svg)
     }
 
 
@@ -32,6 +41,10 @@ p {
     padding: 60px 15% 60px 15%;
 
 }
+#webglCanvas {
+    width: 50%;
+    height: auto;
+}
 h5 {
     color: #a31844;
     font-size: medium;
@@ -39,9 +52,10 @@ h5 {
 #hey {
     margin-bottom: 15px;
 }
-.name {
+.name,.lastName {
     margin: 0;
-
+    display: block;
+    will-change: opacity, transform;
     font-size: 70px !important; 
 }
 #aboutP{ 
@@ -71,8 +85,25 @@ h5 {
     height: 26vw;
 
 }
+@media only screen and (max-width: 1330px) {
+    .illustration-section {
+        display: none;
+    }
+    .illust-bgcolor {
+        display: none;
+    }
+    #contactBackground {
+        display: none;
+    }
+    .contactTitle {
+        display: none;
+    }
+}
+main {
+    display: none;
+}
 @media only screen and (max-width: 1195px) {
-    .name {
+    .name,.lastName {
         font-size: 40px !important; 
     }
 }
@@ -124,21 +155,33 @@ h5 {
         background-position: 15% 50%;
     }
 }
+#projectAnim {
+    height: 58vh;
+    width: 77vw;
+}
 .previousWork {
-    background-color: #6a439d;
+    background-image: url(assets/PWbackground.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 600px;
     padding: 100px 15% 60px 15%;
 }
 .projects {
     height: auto;
-    padding: 0 15% 60px 15%;
+    padding: 60px 15% 60px 15%;
 }
 .contact {
-    background-color: #160d20;
-    margin-top: 5rem;
-    margin-bottom: 4rem;
-    height: 500px;
-    padding: 60px 15% 60px 15%;
+    z-index: 1;
+    position: relative;
+    background-color: #191025;
+    margin-top: 15rem;
+    margin-bottom: 0;
+    height: 842px;
+    padding: 60px 15% 38px 15%;
+}
+
+.form-section {
+    margin-top: 10rem;
 }
 
 .navbar {
@@ -355,6 +398,45 @@ form {
 }
 #user_message {
     height: 6rem;
+}
+
+@font-face {
+    font-family: Sequel100;
+    src: url("assets/Sequel100Black-85.ttf") format("truetype");
+ }
+
+.contactTitle {
+    width: 500px;
+    position: absolute;
+    right: 122px;
+    bottom: 385px;
+
+    font-family: 'Sequel100', sans-serif;
+    transition: transform 0.1s ease;
+    font-size: 5rem;
+    line-height: 100%;
+    z-index: 3;
+}
+.illustration-section {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 50vw;
+    height: 931px;
+}
+.illust-bgcolor {
+    position: absolute;
+    background-color: #281c34;
+    right: 0px;
+    bottom: 0px;
+    width: 5vw;
+    height: 931px;
+}
+#contactBackground {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
 }
 @media only screen and (max-width: 561px) {
     #skills {
