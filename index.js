@@ -1,14 +1,13 @@
 import { Application } from "https://cdn.jsdelivr.net/npm/@splinetool/runtime@0.9.480";
 
 const gsap = window.gsap;
+const ScrollTrigger = window.ScrollTrigger;
 const navlinks = document.querySelectorAll(".nav-link");
 const menu = document.querySelector(".menuLogo");
 const list = document.querySelector(".nav-list");
 
 
-const canv = document.getElementById('canvas3d');
-const app = new Application(canv);
-app.load('https://prod.spline.design/0sWc8sUzs1BcOzOd/scene.splinecode');
+
 
 const contactContainer = document.querySelector(".illustration-section");
 const text = document.querySelector(".contactTitle");
@@ -83,7 +82,7 @@ async function beginRender() {
     varying vec2 uvCoordinates;
     void main(){
         float depthValue = -0.5 + texture2D(depthTexture, uvCoordinates).x;
-        gl_FragColor = texture2D(imageTexture, uvCoordinates + pointerPos * 0.03 * depthValue);
+        gl_FragColor = texture2D(imageTexture, uvCoordinates + pointerPos * 0.012 * depthValue);
     }
     `
 
@@ -136,8 +135,14 @@ async function beginRender() {
 
     let pointerPositionLoc = glContext.getUniformLocation(shaderProgram, "pointerPos");
     drawingCanvas.onmousemove = function (evt) {
-        let pointerCoordinates = [-1.4 + evt.layerX / drawingCanvas.width, 3 - evt.layerY / drawingCanvas.height]
-        
+        var rect = drawingCanvas.getBoundingClientRect(); // get the bounding rectangle of the canvas
+        var x = evt.clientX - rect.left; // calculate the mouse position
+        var y = evt.clientY - rect.top;
+        //let pointerCoordinates = [-1.4 + x / drawingCanvas.width * 2, 3 - y / drawingCanvas.height * 2];
+        //let pointerCoordinates = [-2 + x / drawingCanvas.width * 2, 1 - y / drawingCanvas.height * 2];
+
+        let pointerCoordinates = [-1.3 + x / drawingCanvas.width * 2, 0.8 - y / drawingCanvas.height * 2];
+
         glContext.uniform2fv(pointerPositionLoc, new Float32Array(pointerCoordinates));
     }
 
@@ -165,21 +170,38 @@ const lastName = document.querySelector('.lastName');
 const hey = document.querySelector('#hey');
 const overlayPath = document.querySelector('.overlay__path');
 let isAnimating = false;
-let Main = document.querySelector("main");
+let preloader = document.querySelector(".preloader");
+let animText1 = document.querySelector('.anim-text1');
+let animText2 = document.querySelector('.anim-text2');
+function getWidth(element) {
+    return element.getBoundingClientRect().width;
+}
 let pageReveal = () => {
     if (isAnimating) return;
     isAnimating = true;
     gsap.timeline({
         onComplete: () => (isAnimating = false)
         })
+
+    
+        .to(animText1, { opacity: 1, duration: 0.1 })
+            .to(animText1, { clip: 'rect(0px, ' + getWidth(animText1) + 'px, 300px, 0px)', ease: 'expo.out', duration: 0 })
+            .to(animText1, { clip: 'rect(0px, ' + (getWidth(animText1) / 15.5) + 'px, 300px, 0px)', x: 350, ease: 'expo.out', duration: 1.6 }, '+=0.75')
+            .to(animText2, { opacity: 0, duration: 0 })
+            .to(animText2, { clip: 'rect(0px, ' + getWidth(animText2) + 'px, 300px, 0px)', ease: 'expo.out', duration: 0 })
+            .to(animText2, { clip: 'rect(0px, ' + (getWidth(animText2) / 15.5) + 'px, 300px, 0px)', x: 346, ease: 'expo.out', duration: 0 }, '+=0.75')
+            .to(animText2, { opacity: 1, duration: 0 })
+            .to(animText1, { opacity: 0, duration: 0 })
+            .to(animText2, { clip: 'rect(0px, ' + (getWidth(animText2) / 7) + 'px, 300px, 0px)', x: 320, ease: 'expo.out', duration: 1 })
+
         .set(overlayPath, {
         attr: { d: 'M 0 100 V 100 Q 50 100 100 100 V 100 z' }
-        })
+        }, '>=')
         .to(overlayPath, { 
         duration: 0.8,
         ease: 'power4.in',
         attr: { d: 'M 0 100 V 50 Q 50 0 100 50 V 100 z' }
-        }, 0)
+        })
         .to(overlayPath, { 
         duration: 0.3,
         ease: 'power2',
@@ -187,7 +209,7 @@ let pageReveal = () => {
         onComplete: () => {
             //frame.classList.add('frame--menu-open');
             //menuWrap.classList.add('menu-wrap--open');
-            Main.style.display = "block";
+            preloader.style.display = "none";
         }
         })
         // now reveal
@@ -217,7 +239,29 @@ let pageReveal = () => {
 
 }
 
-
+document.body.classList.add('noScroll');
 document.addEventListener('DOMContentLoaded', () => {
+    const canv = document.getElementById('canvas3d');
+    const app = new Application(canv);
+    app.load('https://prod.spline.design/UG-eJZ4qbKodTkKQ/scene.splinecode');
+
+    setTimeout(function () {
+        document.body.classList.remove('noScroll');
+    }, 3000);
     pageReveal();
+
 });
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.batch(".card", {
+    onEnter: elements => {
+      gsap.from(elements, {
+        autoAlpha: 0,
+        x: 60,
+        stagger: 0.15
+      });
+    },
+    once: true
+  });

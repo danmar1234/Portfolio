@@ -4,12 +4,43 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #bbbbbb;
 }
+.anim-text-parent{
+    font-family: 'Lato', sans-serif;
+    font-size: 61.5px;
+	font-weight: bold;
+	white-space: nowrap;
+	position: relative;
+	color: #a31844;
+    width: 100%; /* Full width */
+    height: 100%;
+    text-align: center;
+	text-transform: uppercase;
+	font-weight: 400;
+
+}
+.anim-text1, .anim-text2 {
+    overflow: hidden;
+    white-space: nowrap;
+    left: 50%; /* Center horizontally */
+    top: 50%;
+    transform: translateX(-50%); /* Adjust for exact centering */
+    position: absolute;
+    transition: width 1s ease;
+    clip: rect(0px, 0px, 300px, 0px);
+}
 h1 {
     font-family: 'Raleway', sans-serif;
     color: #D6C5F0;
 }
 p {
     font-size: 1.3em;
+}
+i {
+    font-size: 50px;
+    margin: 0.8rem;
+}
+#js {
+    font-size: 45px;
 }
 .overlay {
 	position: absolute;
@@ -28,22 +59,40 @@ p {
     background-repeat: no-repeat;
 }
     .s1 {
-        background-image: url(assets/curve1.svg)
+        background-image: url(assets/curve1.svg);
+        margin-bottom: -2px;
+        position: relative;
+        z-index: 2;
     }
     .s2 {
-        background-image: url(assets/curve2.svg)
+        background-image: url(assets/curve2.svg);
+        margin-bottom: -3px;
+        position: relative;
+        z-index: 2;
     }
 
 
 .about {
-    margin-top: 19rem;
+    margin-top: 9rem;
     height: auto;
-    padding: 60px 15% 60px 15%;
+    padding: 60px 15% 0px 15%;
 
 }
 #webglCanvas {
-    width: 50%;
-    height: auto;
+    width: 392px !important;
+    height: 633px !important;
+    display: block;
+}
+.preloader {
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: #160d20;
+    width: 100vw;
+    height: 100vh;
 }
 h5 {
     color: #a31844;
@@ -72,18 +121,52 @@ h5 {
 #home {
     overflow: hidden;
     display: flex;
-    padding: 150px 0 60px 15%;
+    padding: 18vh 0 60px 15%;
     flex-direction: row;
 }
 #homepageillustr {
     position: absolute;
-    right: 3vw;
-    margin-left: 15%;
-
+    right: 4.5rem;
 }
 #homepageillustrImg {
     height: 26vw;
 
+}
+
+#cards {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+}
+.card {
+    min-width: 19rem;
+    width: 19rem;
+    height: 17rem;
+    position: relative;
+    margin: 0rem 1.5rem 1.5rem 0;
+    padding: 1rem;
+    border: 2px solid #a31844;
+    border-radius: 1rem;
+
+}
+.card:hover {
+    box-shadow: 0 0 18px #630e29;
+}
+.github {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+.langs {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2.4rem;
+}
+@media only screen and (max-width: 1400px) {
+    #cards {
+        flex-wrap: wrap;
+    }
 }
 @media only screen and (max-width: 1330px) {
     .illustration-section {
@@ -99,8 +182,10 @@ h5 {
         display: none;
     }
 }
-main {
-    display: none;
+@media only screen and (max-width: 1300px) {
+    .name,.lastName {
+        font-size: 55px !important; 
+    }
 }
 @media only screen and (max-width: 1195px) {
     .name,.lastName {
@@ -139,6 +224,21 @@ main {
         max-width: 100% !important;
     }
 }
+@media only screen and (max-width: 522px) {
+    #js {
+        font-size: 40px;
+    }
+    i {
+        font-size: 40px;
+        margin: 0.6rem;
+    }
+    .card {
+        min-width: 15rem;
+    }
+    #webglCanvas {
+        display: none;
+    }
+}
 @media only screen and (min-width: 770px) {
     .menuLogo {
         display: none;
@@ -159,15 +259,18 @@ main {
     height: 58vh;
     width: 77vw;
 }
+.expSkills {
+    background-color: #6a439d;
+}
 .previousWork {
-    background-image: url(assets/PWbackground.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #6a439d;
     height: 600px;
-    padding: 100px 15% 60px 15%;
+    padding: 120px 15% 60px 15%;
+    margin-top: -3px;
 }
 .projects {
     height: auto;
+    background-color: #160d20;
     padding: 60px 15% 60px 15%;
 }
 .contact {
@@ -191,7 +294,7 @@ main {
 }
 .logo {
     float: left;
-    margin-left: 2.5em;
+    margin-left: 6rem;
     margin-top: 1.9rem;
     font-weight: bold;
     font-size: 1.5em;
@@ -313,44 +416,8 @@ li:hover .nav-link {
 
 }
 
-i {
-    font-size: 50px;
-    margin: 0.8rem;
-}
-#js {
-    font-size: 45px;
-}
-#cards {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.card {
-    min-width: 15rem;
-    width: 21rem;
-    height: 19rem;
-    position: relative;
-    margin: 1rem;
-    padding: 1rem;
-    border: 2px solid #a31844;
-    border-radius: 1rem;
-    transition: .3s;
-}
-.card:hover {
-    box-shadow: 0 0 18px #630e29;
-}
-.github {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-}
-.langs {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 2.4rem;
-}
+
+
 
 
 .formList{
@@ -438,9 +505,10 @@ form {
     bottom: 0px;
     z-index: 2;
 }
-@media only screen and (max-width: 561px) {
+@media only screen and (max-width: 602px) {
     #skills {
         min-width: 247px;
+        margin-top: 5rem;
     }
     #skillsList{
         padding: 0;
@@ -471,4 +539,14 @@ form {
     .menuLogo {
         margin-right: 1.7em;
     }
+    .navbar {
+        padding-top: 0;
+    }
+}
+body.noScroll {
+    overflow: hidden;
+    height: 100%;
+    position: fixed; /* Prevents scrolling */
+    width: 100%;
+    top: 0; /* Ensures the body stays at the top */
 }

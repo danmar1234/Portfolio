@@ -14,12 +14,19 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <svg class="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
         <path class="overlay__path" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z"></path>
     </svg>
     <main>
+        <div class="preloader">
+            <div class="anim-text-parent">
+                <span class="anim-text1">Danyal Maherzadeh</span>
+                <span class="anim-text2">DMnyal Aaherzadeh</span>
+            </div>
+        </div>
         <div class="homepage">
             <div class="navbar">
                 <div class="logo">DM</div>
@@ -35,7 +42,7 @@
             </div>
                 
                 <div id="home">
-                    <div>
+                    <div style="padding-top: 1rem;">
                         <h5 id="hey">Hey, my name is</h5>
                         <h1 class="name">Danyal</h1>
                         <h1 class="lastName">Maherzadeh</h1>
@@ -46,39 +53,47 @@
             </div>
             <div class="about" id="about">
                 <h1>About Me</h1>
-                <p id="aboutP">            
-                    I studied Computer Science at Portland State University, and I'm passionate about both software and web development. 
-                    Bringing ideas to life with code is what drew me to this profession, and I have always really enjoyed the problem solving aspect of it. 
-                    I'm also a big front-end enthusiast. 
-                </p>
-                <canvas id="webglCanvas"></canvas>
-            </div>
-            <div class="curve s1"></div>
-            <div class="previousWork" id="previousWork">
-                <h1>Experience</h1>
-                <p id="work">Volunteer at the Computer Action Team</p>
-                <p id="time">2021-2023</p>
-                <p id="place">Maseeh College of Engineering and Computer Science</p>
-
-                <div id="skills">
-                    <h1>Skills</h1>
-                    <ul id="skillsList">
-                        <li class="skillItem">JavaScript</li>
-                        <li class="skillItem">Node.js</li>
-                        <li class="skillItem">React</li>
-                        <li class="skillItem">HTML & CSS</li>
-                    </ul>
-                    <ul id="skillsList2">
-                        <li class="skillItem">Python</li>
-                        <li class="skillItem">C++</li>
-                        <li class="skillItem">C</li>
-                        <li class="skillItem">C#</li>
-                    </ul>
+                <div class="aboutContent">
+                    <div>
+                        <p id="aboutP">            
+                            I studied Computer Science at Portland State University, and I'm passionate about both software and web development. 
+                            Bringing ideas to life with code is what drew me to this profession, and I have always really enjoyed the problem solving aspect of it. 
+                            I'm also a big front-end enthusiast. 
+                        </p>
+                    </div>
+                    <div>
+                        <canvas id="webglCanvas"></canvas>
+                    </div>
                 </div>
             </div>
-            <div class="curve s2"></div>
+            <div class="expSkills">
+                <div class="curve s1"></div>
+                <div class="previousWork" id="previousWork">
+                    <h1>Experience</h1>
+                    <p id="work">Volunteer at the Computer Action Team</p>
+                    <p id="time">2021-2023</p>
+                    <p id="place">Maseeh College of Engineering and Computer Science</p>
+
+                    <div id="skills">
+                        <h1>Skills</h1>
+                        <ul id="skillsList">
+                            <li class="skillItem">JavaScript</li>
+                            <li class="skillItem">Node.js</li>
+                            <li class="skillItem">React</li>
+                            <li class="skillItem">HTML & CSS</li>
+                        </ul>
+                        <ul id="skillsList2">
+                            <li class="skillItem">Python</li>
+                            <li class="skillItem">C++</li>
+                            <li class="skillItem">C</li>
+                            <li class="skillItem">C#</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="curve s2"></div>
+            </div>
             <div class="projects" id="projects">
-                <h1>Projects</h1>
+                <h1 style="margin-bottom: 0;">Projects</h1>
                 <div id="projectAnim"><canvas id="canvas3d"></canvas></div>
                 <div id="cards">
                     <div class="card"> 
